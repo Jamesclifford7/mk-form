@@ -1,0 +1,7 @@
+main {
+    text-align: center; 
+}
+
+form input, form label, form textarea, form button {
+    margin-bottom: 10px;
+}
