@@ -2,6 +2,46 @@ main {
     text-align: center; 
 }
 
+main form {
+    border: solid;
+    border-width: 0.8px;
+    padding-top: 50px;
+    width: 60%;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    background-color: #E8EEF2;
+}
+
+main h1 {
+    margin-top: 50px;
+}
+
+main form button {
+    background: none;
+    border: none;
+    background-color: #30B2FF;
+    color: white;
+    padding: 5px;
+    padding-left: 25px;
+    padding-right: 25px;
+    border-radius: 20px;
+}
+
+main form button:hover {
+    text-decoration: underline;
+}
+
+form input {
+    width: 200px;
+    margin-left: 5px;
+}
+
+form textarea {
+    width: 50%;
+    height: 300px;
+    margin-top: 15px;
+}
+
 form input, form label, form textarea, form button {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }

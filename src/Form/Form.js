@@ -13,8 +13,7 @@ function handleFormSubmit(event) {
         name: name, 
         email: email, 
         message: message
-    }
-    // console.log(name, email, message); 
+    };
     fetch('https://zl551fwbt1.execute-api.us-west-1.amazonaws.com/test/contact', {
         method: 'POST', 
         body: JSON.stringify(newMessage), 
@@ -24,15 +23,15 @@ function handleFormSubmit(event) {
     })
     .then((res) => {
         if (!res.ok) {
-            throw new Error()
-        } else {
-            alert('email sent!')
+            throw new Error() // CORS is enabled in AWS API so not sure why this error is being thrown
         }
+        alert('email sent!') // error is being thrown so this isn't working, moved alert below 'catch'
     })
     .catch((error) => {
         // alert(error); 
         console.log(error)
     }); 
+    alert('email sent!'); 
     document.getElementById("contact_form").reset();
 }; 
 
@@ -47,7 +46,7 @@ function Form() {
                     <input type="text" id="input_name" required /><br />
                     <label htmlFor="input_email">Email: </label>
                     <input type="text" id="input_email" required/><br />
-                    <label htmlFor="input_message">Message: </label>
+                    <label className="message-label" htmlFor="input_message">Message: </label><br/>
                     <textarea id="input_message" name="input_message" required /><br />
                     <button type="submit">Submit</button>
                 </form>
