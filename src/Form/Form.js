@@ -9,11 +9,24 @@ function handleFormSubmit(event) {
     const name = input_name.value; 
     const email = input_email.value; 
     const message = input_message.value; 
+
+    if (!name.match(/[a-zA-Z]/)) {
+        alert('please enter a valid name'); 
+        return;
+    }; 
+
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    if (!re.test(email)) {
+        alert('please enter a valid email address'); 
+        return; 
+    }; 
+
     const newMessage = {
         name: name, 
         email: email, 
         message: message
     };
+
     fetch('https://zl551fwbt1.execute-api.us-west-1.amazonaws.com/test/contact', {
         method: 'POST', 
         body: JSON.stringify(newMessage), 
